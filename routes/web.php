@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('home', [
+        'name' => 'Jeremiah William Sebastian'
+    ]);
+});
+
+Route::get('/add_items', function () {
+    return view('add_items');
+});
+
+Route::get('/transaction', function () {
     return view('welcome');
 });
