@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-danger">
+<nav class="navbar navbar-expand-lg bg-primary">
         <div class="container">
             <a class="navbar-brand" href="/">stocKing</a>
             <button class="navbar-toggler" type="button"
@@ -22,6 +22,10 @@
                 <a class="nav-link {{ ($title === 'transactionList') ? 'active' : '' }}" href="/transactionList">Transaction</a>
                 </li>
             </ul>
+            <ul class = "navbar-nav ms auto">
+                <li class = "nav-item">
+                    <a href = "/login" class="nav-link {{ ($title === 'login') ? 'active' : '' }}">login</a>
+                </li>
             </div>
         </div>
     </nav>

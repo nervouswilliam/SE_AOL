@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\loginController;
+use App\Http\Controllers\registerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +39,12 @@ Route::get('/subscribe', function () {
         'title' => 'subscribe'
     ]);
 });
+
+Route::get('/login', [loginController::class, 'index']);
+
+Route::get('/register', [registerController::class, 'index']);
+
+Route::post('/register', [registerController::class, 'store']);
+
+
+//Route::get('/add_items',[itemController::class, 'input']);

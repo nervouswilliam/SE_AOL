@@ -1,10 +1,7 @@
 @extends('layouts.main')
-<!--
-@section('title')
-    <title>stocKing | Add Items<title>
-@endsection
--->
+
 @section('contents')
+    <form action="/store", method = "post">
         <div style = "color: black;">
             <h1>add product to inventory </h1>
             </br>
@@ -29,8 +26,9 @@
             <input type = "int" name = "quantity" style = "color: black;">
             </br>
             <!-- button -->
-            <button>Add new item </button>
+            <input type = "submit" name = "insert">
         </div>
+    </form>
 @endsection
     
 
