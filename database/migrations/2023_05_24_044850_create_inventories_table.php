@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('inventories', function (Blueprint $table) {
             $table->unsignedBigInteger("user_id");
             $table->unsignedBigInteger("item_id");
-            $table->date("insertDate");
+            $table->date("expireDate");
             $table->integer("insertQuantity");
             $table->timestamps();
 

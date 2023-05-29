@@ -8,6 +8,24 @@ use Throwable;
 class Handler extends ExceptionHandler
 {
     /**
+     * A list of exception types with their corresponding custom log level.
+     *
+     * @var array<class-string<\Throwable>, \Psr\Log\LogLevel::*>
+     */
+    protected $levels = [
+        //
+    ];
+
+    /**
+     * A list of exception types with their corresponding custom log level.
+     *
+     * @var array<int, class-string<\Throwable>>
+     */
+    protected $dontReport = [
+        //
+    ];
+
+    /**
      * The list of the inputs that are never flashed to the session on validation exceptions.
      *
      * @var array<int, string>
