@@ -15,6 +15,9 @@ use App\Http\Controllers\registerController;
 |
 */
 
+Route::get('/', [ViewController::class, 'initialPage']);
+Route::get('/', [ViewController::class, 'showLogin']);
+
 Route::get('/', function () {
     return view('home', [
         'title' => 'home',
