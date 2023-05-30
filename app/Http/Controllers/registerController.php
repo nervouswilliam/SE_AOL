@@ -6,13 +6,6 @@ use Illuminate\Http\Request;
 
 class registerController extends Controller
 {
-    public function index()
-    {
-        return view('register.index', [
-            'title' => 'register',
-            'active' => 'register'
-        ]);
-    }
 
     public function store(Request $request)
     {
@@ -23,6 +16,6 @@ class registerController extends Controller
         ]);
 
         dd($request);
-         
+
     }
 }

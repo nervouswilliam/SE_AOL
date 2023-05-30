@@ -1,32 +1,51 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class ViewController extends Controller
 {
     //
-    public function initialPage() {
-        if (Auth::check()) {
-            return redirect('/');
-        }
-        else {
-            return view('partials.navbar');
-        }
+    protected $namespace = 'App\Http\Controllers';
+
+    public function showHome() {
+        return view('home', [
+            'title'=>'home',
+            'name'=>'Jeremiah William Sebastian'
+        ]);
     }
 
     public function showLogin() {
-        return view('login.index');
+        return view('login.index', [
+            'title'=>'Login',
+            'active'=>'Login',
+        ]);
     }
 
     public function showRegister() {
-        return view('register.index');
+        return view('register.index', [
+            'title'=>'Register',
+            'active'=>'Register',
+        ]);
     }
 
-    public function showHome() {
-        return view('home');
+    public function showAddItems() {
+        return view('add_items', [
+            'title'=>'add items',
+        ]);
+    }
+
+    public function showSubscribe() {
+        return view('subscribe', [
+            'title'=>'subscribe',
+        ]);
+    }
+
+    public function showTransaction() {
+        return view('transactionList',[
+            'title'=>'transaction'
+        ]);
     }
 }
