@@ -48,4 +48,10 @@ class ViewController extends Controller
             'title'=>'transaction'
         ]);
     }
+
+    public function showMenu(){
+        return view('menu',[
+            'title' => 'menu'
+        ]);
+    }
 }

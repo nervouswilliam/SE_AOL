@@ -6,7 +6,7 @@
     <div class="content">
         <div class="column">
             <div class="upper">
-                <center><a href="#"><img src="insertProduct.png"></a></center>
+                <center><a href="#"><img src="/img/insertProduct.png"></a></center>
             </div>
             <div class="middle">
                 <h2>INSERT PRODUCT</h2>
@@ -20,7 +20,7 @@
 
         <div class="column">
             <div class="upper">
-                <center><a href="#"><img src="removeProduct.png"></a></center>
+                <center><a href="#"><img src="/img/removeProduct.png"></a></center>
             </div>
             <div class="middle">
                 <h2>EXTRACT PRODUCT</h2>
@@ -32,7 +32,7 @@
 
         <div class="column">
             <div class="upper">
-                <center><a href="#"><img src="viewProduct.png"></a></center>
+                <center><a href="#"><img src="/img/viewProduct.png"></a></center>
             </div>
             <div class="middle">
                 <h2>VIEW INVENTORY</h2>
@@ -44,7 +44,7 @@
 
         <div class="column">
             <div class="upper">
-                <center><a href="#"><img src="viewReport.png"></a></center>
+                <center><a href="#"><img src="/img/viewReport.png"></a></center>
             </div>
             <div class="middle">
                 <h2>INVENTORY REPORT</h2>

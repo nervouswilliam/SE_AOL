@@ -24,6 +24,7 @@ Route::post('/register', [AuthorizationController::class, 'Register']);
     Route::get('/add_items', [ViewController::class, 'showAddItems']);
     Route::get('/transactionList', [ViewController::class, 'showTransaction']);
     Route::get('/subscribe', [ViewController::class, 'showSubscribe']);
+    Route::get('/menu', [ViewController::class, 'showMenu']);
 // });
 
 
