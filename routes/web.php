@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\AuthorizationController;
+use App\Http\Controllers\loginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +20,11 @@ Route::get('/', [ViewController::class, 'showHome']);
 Route::get('/login', [ViewController::class, 'showLogin']);
 Route::get('/register', [ViewController::class, 'showRegister']);
 Route::post('/register', [AuthorizationController::class, 'Register']);
-Route::middleware('auth')->group(function() {
+// Route::middleware('auth')->group(function() {
     Route::get('/add_items', [ViewController::class, 'showAddItems']);
     Route::get('/transactionList', [ViewController::class, 'showTransaction']);
     Route::get('/subscribe', [ViewController::class, 'showSubscribe']);
-});
+// });
 
 
 // Route::post('/register', [registerController::class, 'store']);
