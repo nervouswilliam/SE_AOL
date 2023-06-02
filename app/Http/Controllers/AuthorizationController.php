@@ -8,11 +8,14 @@ class AuthorizationController extends Controller
 {
     //
     public function Register(Request $request): RedirectResponse {
-        $request->validate($requst, [
-            'email'=>'required|email|unique:users',
-            'username'=>['required', 'min:3', 'max:255', 'unique:users'],
+        $credentials = $request->validate([
+            'username'=>'required|min:3|max:255|unique:users',
+            'email'=>'required|unique:users',
             'password'=>'required|min:5,max:255',
         ]);
-        dd($request);
+
+        if (Auth::attempt($credentials)){
+            return redirect('/');
+        }
     }
 }
