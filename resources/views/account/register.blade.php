@@ -8,20 +8,20 @@
         <form method="post">
             {{ csrf_field() }}
             <div class="txt">
-                <label class="name">Name</label>
-                <input type="text" required />
+                <label for="username" class="username">Username</label>
+                <input type="text" id="username" name="username"/>
             </div>
             <div class="txt">
-                <label class="email">Email</label>
-                <input type="text" required />
+                <label for="email" class="email">Email</label>
+                <input type="text" id="email" name="email"/>
             </div>
             <div class="txt">
-                <label class="pass">Password</label>
-                <input class="password" type="password" required />
+                <label for="password" class="pass">Password</label>
+                <input class="password" type="password" id="pw" name="pw"/>
             </div>
             <div class="txt">
-                <label class="conf">Confirm</label>
-                <input class="confirm" type="password" required />
+                <label for="confirm" class="conf">Confirm</label>
+                <input class="confirm" type="password" id="confirmpw" name="confirmpw"/>
             </div>
             <input id="terms" type="checkbox" />
             <label for="terms">I agree with the terms and conditions</label>

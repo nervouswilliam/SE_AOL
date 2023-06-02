@@ -17,9 +17,13 @@ use App\Http\Controllers\loginController;
 */
 
 Route::get('/', [ViewController::class, 'showHome']);
+
 Route::get('/login', [ViewController::class, 'showLogin']);
+Route::post('/login', []);
+
 Route::get('/register', [ViewController::class, 'showRegister']);
 Route::post('/register', [AuthorizationController::class, 'Register']);
+
 // Route::middleware('auth')->group(function() {
     Route::get('/add_items', [ViewController::class, 'showAddItems']);
     Route::get('/transactionList', [ViewController::class, 'showTransaction']);
