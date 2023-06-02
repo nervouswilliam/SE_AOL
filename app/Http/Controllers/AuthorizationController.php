@@ -16,7 +16,7 @@ class AuthorizationController extends Controller
             'username' => 'required | min:3 | max:255',
             'email' => 'required | unique:users',
             'password' => 'required | min:5 | max:255 | alpha_num',
-            'confirmpw' => 'required | min:5 | max:255 | alpha_num',
+            'confirm password' => 'required | min:5 | max:255 | alpha_num',
         ]);
 
         // confirm password check

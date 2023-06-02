@@ -32,7 +32,7 @@ class ViewController extends Controller
     }
 
     public function showAddItems() {
-        return view('add_items', [
+        return view('addItems', [
             'title'=>'add items',
         ]);
     }
