@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\AuthorizationController;
-use App\Http\Controllers\loginController;
+use App\Http\Controllers\registerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +17,21 @@ use App\Http\Controllers\loginController;
 */
 
 Route::get('/', [ViewController::class, 'showHome']);
+Route::get('/add_items', [ViewController::class, 'showAddItems']);
+Route::get('/transactionList', [ViewController::class, 'showTransaction']);
+Route::get('/subscribe', [ViewController::class, 'showSubscribe']);
+Route::get('/menu', [ViewController::class, 'showMenu']);
+
+//routing login
+
 Route::get('/login', [ViewController::class, 'showLogin']);
+Route::post('/login', [AuthorizationController::class, 'storeLogin']);
+
+//routing register
+
 Route::get('/register', [ViewController::class, 'showRegister']);
-Route::post('/register', [AuthorizationController::class, 'Register']);
-// Route::middleware('auth')->group(function() {
-    Route::get('/add_items', [ViewController::class, 'showAddItems']);
-    Route::get('/transactionList', [ViewController::class, 'showTransaction']);
-    Route::get('/subscribe', [ViewController::class, 'showSubscribe']);
-    Route::get('/menu', [ViewController::class, 'showMenu']);
+Route::post('/register', [AuthorizationController::class, 'store']);
+
 // });
 
 
@@ -32,3 +39,7 @@ Route::post('/register', [AuthorizationController::class, 'Register']);
 
 
 //Route::get('/add_items',[itemController::class, 'input']);
+
+// Route::get('/register', [ViewController::class, 'showRegister']);
+// Route::post('/register', [AuthorizationController::class, 'Register']);
+// Route::middleware('auth')->group(function() {
