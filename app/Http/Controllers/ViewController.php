@@ -13,7 +13,7 @@ class ViewController extends Controller
     public function showHome() {
         return view('home', [
             'title'=>'home',
-            'name'=>'Jeremiah William Sebastian'
+            'name'=>'blank'
         ]);
     }
 
