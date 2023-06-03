@@ -17,12 +17,12 @@ class AuthorizationController extends Controller
         $credentials = $request->validate([
             'email' => 'required | email',
             'name' => 'required',
-            'password' => 'required| alpha_num',
-            'confirm password' => 'required| alpha_num'
+            'password' => 'required | alpha_num',
+            'confirmpassword' => 'required | alpha_num'
         ]);
 
         // check confirm password
-        $confirm = $request->confirm;
+        $confirm = $request->confirmpassword;
         $password = $request->password;
         if($confirm != $password)
         {

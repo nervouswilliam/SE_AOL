@@ -20,10 +20,10 @@
             <input class="password" type="password" required name = "password">
           </div>
           <div class="txt">
-            <label class="conf">Confirm</label>
-            <input class="confirm" type="password" required name = "confirm">
+            <label class="conf">Confirm Password</label>
+            <input class="confirm" type="password" required name = "confirmpassword">
           </div>
-          <input id="terms" type="checkbox" />
+          <input id="terms" type="checkbox" required/>
           <label for="terms">I agree with the terms and conditions</label>
           @if ($errors->any())
             <ul>
@@ -32,7 +32,7 @@
               @endforeach
             </ul>
           @endif
-          <input type="submit" value="Register" />
+          <input type="submit" value="Register"/>
           <div class="regist">
             I already have account <a href="/login">login</a>
           </div>

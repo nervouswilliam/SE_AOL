@@ -32,19 +32,19 @@ class ViewController extends Controller
     }
 
     public function showAddItems() {
-        return view('addItems', [
+        return view('item.addItems', [
             'title'=>'add items',
         ]);
     }
 
     public function showSubscribe() {
-        return view('subscribe', [
+        return view('account.subscribe', [
             'title'=>'subscribe',
         ]);
     }
 
     public function showTransaction() {
-        return view('transactionList',[
+        return view('item.transactionList',[
             'title'=>'transaction'
         ]);
     }
