@@ -2,26 +2,29 @@
 
 @section('contents')
 <link rel="stylesheet" href="/css/login_register.css">
-<div class="background">
     <div class="center">
         <h1>Register Page</h1>
         <form method="post">
             {{ csrf_field() }}
             <div class="txt">
+                <input type="text" id="username" name="username" required/>
+                <span></span>
                 <label for="username" class="username">Username</label>
-                <input type="text" id="username" name="username"/>
             </div>
             <div class="txt">
+                <input type="text" id="email" name="email" required/>
+                <span></span>
                 <label for="email" class="email">Email</label>
-                <input type="text" id="email" name="email"/>
             </div>
             <div class="txt">
+                <input class="password" type="password" id="password" name="password" required/>
+                <span></span>
                 <label for="password" class="pass">Password</label>
-                <input class="password" type="password" id="password" name="password"/>
             </div>
             <div class="txt">
+                <input class="confirm" type="password" id="confirmpw" name="confirm password" required/>
+                <span></span>
                 <label for="confirm" class="conf">Confirm Password</label>
-                <input class="confirm" type="password" id="confirmpw" name="confirm password"/>
             </div>
             <div>
                 <input id="terms" type="checkbox" />
@@ -40,5 +43,4 @@
             </div>
         </form>
     </div>
-</div>
 @endsection

@@ -14,8 +14,8 @@
         <a href="WelcomeGuest.html"><img src="/img/stocking-logo.png"></a>
         <div class="navbar">
             <ul>
-                <li><a href="">Login</a></li>
-                <li><a href="">Register</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
             </ul>
         </div>
     </nav>

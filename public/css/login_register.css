@@ -1,83 +1,112 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap%22); */
 
-*{
-margin: 0;
-padding: 0;
-font-family: "poppins", sans-serif;
-background-color: #799fcc;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
 }
 
 .center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  border-radius: 20px;
-  margin-top: 5vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    border-radius: 20px;
+    margin-top: 5vh;
 }
 
 .center h1 {
-  text-align: center;
-  padding: 0 0 20px 0;
-  /* border-bottom: 1px solid silver; /
-  font-family: "poppins-bold", sans-serif;
-  color: black;
+    text-align: center;
+    padding: 0 0 20px 0;
+    /* border-bottom: 1px solid silver; */
+    font-family: "poppins-bold", sans-serif;
+    color: lightskyblue;
 }
 
 .center form {
-  padding: 0 40px;
-  box-sizing: border-box;
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
 form .txt {
-  position: relative;
-  margin: 30px 0;
-  width: 100%;
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
 }
 
-input[type="text"] {
-  background-color: white;
-  width: 70%;
+.txt input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
 }
 
-input[type="password"] {
-  background-color: white;
-  width: 70%;
-}
-.txt .conf {
-  margin-right: 4%;
-}
-.txt .email {
-  margin-right: 10%;
-}
-
-.regist {
-  / margin: -5px 0 20px 5px; */
-  margin-top: 3%;
-  margin-bottom: 3%;
-  color: black;
+.txt label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.5s;
 }
 
-.regist:hover {
-  text-decoration: underline;
+textarea:focus,
+input:focus {
+    color: black;
+}
+
+.txt span::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: lightskyblue;
+    transition: 0.5s;
+}
+
+.txt input:focus ~ label,
+.txt input:valid ~ label {
+    top: -5px;
+    color: lightskyblue;
+}
+
+.txt input:focus ~ span::before,
+.txt input:valid ~ span::before {
+    width: 100%;
+}
+
+.pw {
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6;
+}
+
+.pw:hover {
+    text-decoration: underline;
 }
 
 input[type="submit"] {
-  margin-left: 23%;
-  width: 50%;
-  height: 50px;
-  background: #d1d1c7;
-  border: 4px solid;
-  border-color: #d1d1c7;
-  font-size: 18px;
-  color: black;
-  font-weight: 700;
-  cursor: pointer;
-  outline: none;
+    width: 100%;
+    height: 50px;
+    background: #a6a6a6;
+    border: 4px solid;
+    border-color: lightskyblue;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
 }
 
 input[type="submit"]:hover {
-  border-color: black;
-  transition: 0.5s;
+    border-color: #a6a6a6;
+    transition: 0.5s;
 }
