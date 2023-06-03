@@ -7,7 +7,7 @@
         <form method="post">
             {{ csrf_field() }}
             <div class="txt">
-                <input type="text" id="username" name="username" required/>
+                <input type="text" id="username" name="name" required/>
                 <span></span>
                 <label for="username" class="username">Username</label>
             </div>
@@ -22,7 +22,7 @@
                 <label for="password" class="pass">Password</label>
             </div>
             <div class="txt">
-                <input class="confirm" type="password" id="confirmpw" name="confirm password" required/>
+                <input class="confirm" type="password" id="confirmpw" name="confirm" required/>
                 <span></span>
                 <label for="confirm" class="conf">Confirm Password</label>
             </div>

@@ -19,10 +19,10 @@ use App\Http\Controllers\loginController;
 Route::get('/', [ViewController::class, 'showHome']);
 
 Route::get('/login', [ViewController::class, 'showLogin']);
-Route::post('/login', []);
+Route::post('/login', [AuthorizationController::class, 'storeLogin']);
 
 Route::get('/register', [ViewController::class, 'showRegister']);
-Route::post('/register', [AuthorizationController::class, 'Register']);
+Route::post('/register', [AuthorizationController::class, 'store']);
 
 // Route::middleware('auth')->group(function() {
     Route::get('/add_items', [ViewController::class, 'showAddItems']);

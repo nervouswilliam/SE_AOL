@@ -3,49 +3,53 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\DB;
 
+
 class AuthorizationController extends Controller
 {
-    // register controller
-    public function Register(Request $request)
+    //
+    public function store(Request $request)
     {
-        // check user input
         $credentials = $request->validate([
-            'username' => 'required | min:3 | max:255',
-            'email' => 'required | unique:users',
-            'password' => 'required | min:5 | max:255 | alpha_num',
-            'confirm password' => 'required | min:5 | max:255 | alpha_num',
+            'name' => 'required | alpha_num',
+            'email' => 'required | email',
+            'password' => 'required| alpha_num',
+            'confirm' => 'alpha_num'
         ]);
-
-        // confirm password check
-        $confirmPassword = $request->confirmpassword;
+        $confirm = $request->confirm;
         $password = $request->password;
-        if($confirmPassword != $password)
+        if($confirm != $password)
         {
-            return redirect()->back()->withErrors(new MessageBag(['Confirm password does not match password']));
+            return redirect() -> back() -> withErrors(new messageBag(['Confirm password does not match the password']));
         }
-
-        // insert to db
-        DB::table('users')->insert([
-            'username' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
+        // dd($request -> name);
+        DB::table('users') -> insert([
+            'name' => $request -> name,
+            'password' => bcrypt($request -> password),
             'role' => 'member',
-            'created_at' => now(),
+            'email' => $request -> email,
+            'created_at' => now()
         ]);
-
-        // redirect to login
         return redirect('/login');
     }
-
-    // login controller
-    public function Login(Request $request)
+    
+    public function storeLogin(Request $request)
     {
-        // check user input
         $credentials = $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
 
+        if(Auth::attempt($credentials, $request -> remember_me))
+        {
+            return redirect('/');
+        }
+        return back() -> withErrors([
+            'your username or password is incorrect'
         ]);
     }
+
 }
