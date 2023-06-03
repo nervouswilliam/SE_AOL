@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\DB;
 
-
 class AuthorizationController extends Controller
 {
     //
@@ -61,4 +60,32 @@ class AuthorizationController extends Controller
             ]);
         }
     }
+
+    public function storeLogin(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        if(Auth::attempt($credentials, $request -> remember_me))
+        {
+            return redirect('/');
+        }
+        return back() -> withErrors([
+            'your username or password is incorrect'
+        ]);
+
+        // validate user input
+        if(Auth::attempt($credentials, $request->remember_me))
+        {
+            return redirect('/');
+        }
+        else{
+            return back()->withErrors([
+                'your username or password is incorrect'
+            ]);
+        }
+    }
+
 }

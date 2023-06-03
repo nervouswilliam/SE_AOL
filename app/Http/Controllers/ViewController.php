@@ -18,7 +18,7 @@ class ViewController extends Controller
     }
 
     public function showLogin() {
-        return view('account.login', [
+        return view('login.index', [
             'title'=>'Login',
             'active'=>'Login',
         ]);

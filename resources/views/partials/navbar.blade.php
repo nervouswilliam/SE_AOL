@@ -26,6 +26,9 @@
                 <li class = "nav-item">
                     <a href = "/login" class="nav-link {{ ($title === 'login') ? 'active' : '' }}">Login</a>
                 </li>
+                <li class = "nav-item">
+                    <a href = "/register" class="nav-link {{ ($title === 'register') ? 'active' : '' }}">Register</a>
+                </li>
             </div>
         </div>
     </nav>
