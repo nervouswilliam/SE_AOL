@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class AuthorizationController extends Controller
 {
     //
-    public function store(Request $request)
+    public function Register(Request $request)
     {
         // check user input
         $credentials = $request->validate([
@@ -42,7 +42,7 @@ class AuthorizationController extends Controller
         return redirect('/login');
     }
 
-    public function storeLogin(Request $request)
+    public function Login(Request $request)
     {
         // check user input
         $credentials = $request->validate([

@@ -24,7 +24,7 @@
             </ul>
             <ul class = "navbar-nav ms auto">
                 <li class = "nav-item">
-                    <a href = "/login" class="nav-link {{ ($title === 'login') ? 'active' : '' }}">login</a>
+                    <a href = "/login" class="nav-link {{ ($title === 'login') ? 'active' : '' }}">Login</a>
                 </li>
             </div>
         </div>

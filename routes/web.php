@@ -25,12 +25,12 @@ Route::get('/menu', [ViewController::class, 'showMenu']);
 //routing login
 
 Route::get('/login', [ViewController::class, 'showLogin']);
-Route::post('/login', [AuthorizationController::class, 'storeLogin']);
+Route::post('/login', [AuthorizationController::class, 'Login']);
 
 //routing register
 
 Route::get('/register', [ViewController::class, 'showRegister']);
-Route::post('/register', [AuthorizationController::class, 'store']);
+Route::post('/register', [AuthorizationController::class, 'Register']);
 
 // });
 
