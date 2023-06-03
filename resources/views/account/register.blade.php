@@ -25,10 +25,6 @@
           </div>
           <input id="terms" type="checkbox" />
           <label for="terms">I agree with the terms and conditions</label>
-          <input type="submit" value="Register" />
-          <div class="regist">
-            I already have account <a href="/login">login</a>
-          </div>
           @if ($errors->any())
             <ul>
               @foreach($errors->all() as $error)
@@ -36,6 +32,10 @@
               @endforeach
             </ul>
           @endif
+          <input type="submit" value="Register" />
+          <div class="regist">
+            I already have account <a href="/login">login</a>
+          </div>
         </form>
       </div>
     </div>

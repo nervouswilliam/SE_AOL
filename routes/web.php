@@ -17,7 +17,7 @@ use App\Http\Controllers\registerController;
 */
 
 Route::get('/', [ViewController::class, 'showHome']);
-Route::get('/add_items', [ViewController::class, 'showAddItems']);
+Route::get('/addItems', [ViewController::class, 'showAddItems']);
 Route::get('/transactionList', [ViewController::class, 'showTransaction']);
 Route::get('/subscribe', [ViewController::class, 'showSubscribe']);
 Route::get('/menu', [ViewController::class, 'showMenu']);

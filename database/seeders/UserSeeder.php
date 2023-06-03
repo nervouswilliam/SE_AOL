@@ -18,13 +18,13 @@ class UserSeeder extends Seeder
             'name' => 'william',
             'email' => 'william@test.com',
             'password' => bcrypt('pw123'),
-            'role' => 'subscribed',
+            'role' => 'admin',
             'created_at' => now()
         ]);
         DB::table('users')->insert([
             'name' => 'darren',
             'email' => 'darren@test.com',
-            'password' => bcrypt('pw123'),
+            'password' => bcrypt('test123'),
             'role' => 'admin',
             'created_at' => now()
         ]);
@@ -32,7 +32,7 @@ class UserSeeder extends Seeder
             'name' => 'andre',
             'email' => 'andre@test.com',
             'password' => bcrypt('pw123'),
-            'role' => 'unsubscribed',
+            'role' => 'subscribed',
             'created_at' => now()
         ]);
         DB::table('users')->insert([

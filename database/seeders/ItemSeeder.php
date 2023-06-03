@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Helpers\Helper;
+use App\Models\Item;
 
 class ItemSeeder extends Seeder
 {
@@ -14,15 +16,18 @@ class ItemSeeder extends Seeder
     public function run(): void
     {
         DB::table('items')->insert([
-            'name' => 'item1',
+            'name' => 'sirloin',
+            'type' => 'beef',
             'created_at' => now()
         ]);
         DB::table('items')->insert([
-            'name' => 'item2',
+            'name' => 'mandarin',
+            'type' => 'fruit',
             'created_at' => now()
         ]);
         DB::table('items')->insert([
-            'name' => 'item3',
+            'name' => 'cabbage',
+            'type' => 'vegetable',
             'created_at' => now()
         ]);
     }

@@ -11,9 +11,14 @@
             <input type = "int" name = "UserId" style = "color: black;">
             </br>
             <!-- item id -->
-            <label for="labelItemId"> Add item id </label>
+            {{-- <label for="labelItemId"> Add item id </label>
             </br>
             <input type = "int" name = "itemId" style = "color: black;">
+            </br> --}}
+            {{-- item type --}}
+            <label for="ItemExpDate"> Add item type </label>
+            </br>
+            <input type = "text" name = "itemType" style = "color: black">
             </br>
             <!-- item expired date -->
             <label for="ItemExpDate"> Add item expired date </label>
@@ -30,7 +35,7 @@
         </div>
     </form>
 @endsection
-    
+
 
 
 

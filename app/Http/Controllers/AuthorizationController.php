@@ -13,43 +13,52 @@ class AuthorizationController extends Controller
     //
     public function store(Request $request)
     {
+        // check user input
         $credentials = $request->validate([
             'email' => 'required | email',
             'name' => 'required',
             'password' => 'required| alpha_num',
-            'confirm' => 'required| alpha_num'
+            'confirm password' => 'required| alpha_num'
         ]);
+
+        // check confirm password
         $confirm = $request->confirm;
         $password = $request->password;
         if($confirm != $password)
         {
             return redirect() -> back() -> withErrors(new messageBag(['Confirm password does not match the password']));
         }
-        // dd($request -> name);
+
+        // insert new user to db
         DB::table('users') -> insert([
-            'name' => $request -> name,
-            'password' => bcrypt($request -> password),
+            'name' => $request->name,
+            'password' => bcrypt($request->password),
             'role' => 'member',
-            'email' => $request -> email,
+            'email' => $request->email,
             'created_at' => now()
         ]);
+
+        // redirect to login
         return redirect('/login');
     }
-    
+
     public function storeLogin(Request $request)
     {
+        // check user input
         $credentials = $request->validate([
             'name' => 'required',
             'password' => 'required'
         ]);
 
-        if(Auth::attempt($credentials, $request -> remember_me))
+        // validate user input
+        if(Auth::attempt($credentials, $request->remember_me))
         {
             return redirect('/');
         }
-        return back() -> withErrors([
-            'your username or password is incorrect'
-        ]);
+        else{
+            return back()->withErrors([
+                'your username or password is incorrect'
+            ]);
+        }
     }
-
 }

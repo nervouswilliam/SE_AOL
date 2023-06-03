@@ -19,17 +19,17 @@
                     <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me">
                     <label class="form-check-label" for="remember_me">Remember me</label>
                 </div>
-          <input type="submit" value="Register" />
-          <div class="regist">
-            I dont have an account <a href="/register">register</a>
-          </div>
-          @if ($errors->any())
-            <ul>
+                @if ($errors->any())
+                <ul>
               @foreach($errors->all() as $error)
                 <li style = "color: red">{{ $error }}</li>
               @endforeach
             </ul>
           @endif
+          <input type="submit" value="Register" />
+          <div class="regist">
+            I dont have an account <a href="/register">register</a>
+          </div>
         </form>
       </div>
     </div>
