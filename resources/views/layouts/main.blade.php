@@ -25,7 +25,7 @@
               <a class="nav-link {{ ($title === 'home') ? 'active' : '' }}" href="/">Home</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link {{ ($title === 'add_items') ? 'active' : '' }}" href="/add_items">Add items</a>
+              <a class="nav-link {{ ($title === 'add_items') ? 'active' : '' }}" href="/addItems">Add items</a>
               </li>
               <li class="nav-item">
               <a class="nav-link {{ ($title === 'subscribe') ? 'active' : '' }}" href="/subscribe">Subscribe</a>
