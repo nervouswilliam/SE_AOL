@@ -14,8 +14,8 @@ class AuthorizationController extends Controller
     {
         // check user input
         $credentials = $request->validate([
-            'email' => 'required | email',
-            'name' => 'required',
+            'email' => 'required | unique:users',
+            'username' => 'required',
             'password' => 'required | alpha_num',
             'confirmpassword' => 'required | alpha_num'
         ]);
@@ -30,9 +30,9 @@ class AuthorizationController extends Controller
 
         // insert new user to db
         DB::table('users') -> insert([
-            'name' => $request->name,
+            'name' => $request->username,
             'password' => bcrypt($request->password),
-            'role' => 'member',
+            'role' => 'unsubscribed',
             'email' => $request->email,
             'created_at' => now()
         ]);
@@ -42,26 +42,6 @@ class AuthorizationController extends Controller
     }
 
     public function Login(Request $request)
-    {
-        // check user input
-        $credentials = $request->validate([
-            'name' => 'required',
-            'password' => 'required'
-        ]);
-
-        // validate user input
-        if(Auth::attempt($credentials, $request->remember_me))
-        {
-            return redirect('/');
-        }
-        else{
-            return back()->withErrors([
-                'your username or password is incorrect'
-            ]);
-        }
-    }
-
-    public function storeLogin(Request $request)
     {
         $credentials = $request->validate([
             'email' => 'required',

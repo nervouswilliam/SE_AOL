@@ -2,18 +2,19 @@
 
 @section('contents')
 <link rel="stylesheet" href="/css/login_register.css">
-<div class="background">
-      <div class="center">
+    <div class="center">
         <h1>Login page</h1>
         <form action="/login" method="post" enctype="multipart/form-data">
-          {{ csrf_field() }}
-          <div class="txt">
-            <label class="username">Username</label>
-            <input type="text" required name = "name">
-          </div>
-          <div class="txt">
-            <label class="pass">Password</label>
-            <input class="password" type="password" required name = "password">
+            {{ csrf_field() }}
+            <div class="txt">
+                <input type="text" required name="email">
+                <span></span>
+                <label>Email</label>
+            </div>
+            <div class="txt">
+                <input type="password" required name="password">
+                <span></span>
+                <label>Password</label>
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me">
@@ -26,11 +27,10 @@
                 @endforeach
                 </ul>
             @endif
-            <input type="submit" value="Register" />
+            <input type="submit" value="Login" />
             <div class="regist">
-                I dont have an account <a href="/register">register</a>
+                Don't have an account? <a href="/register">register</a>
             </div>
         </form>
     </div>
-</div>
 @endsection

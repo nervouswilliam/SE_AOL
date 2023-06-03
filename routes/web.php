@@ -17,29 +17,15 @@ use App\Http\Controllers\registerController;
 */
 
 Route::get('/', [ViewController::class, 'showHome']);
-Route::get('/addItems', [ViewController::class, 'showAddItems']);
-Route::get('/transactionList', [ViewController::class, 'showTransaction']);
-Route::get('/subscribe', [ViewController::class, 'showSubscribe']);
 Route::get('/menu', [ViewController::class, 'showMenu']);
+Route::get('/addItems', [ViewController::class, 'showAddItems']);
+Route::get('/transaction', [ViewController::class, 'showTransaction']);
+Route::get('/subscribe', [ViewController::class, 'showSubscribe']);
 
 //routing login
-
 Route::get('/login', [ViewController::class, 'showLogin']);
 Route::post('/login', [AuthorizationController::class, 'Login']);
 
 //routing register
-
 Route::get('/register', [ViewController::class, 'showRegister']);
 Route::post('/register', [AuthorizationController::class, 'Register']);
-
-// });
-
-
-// Route::post('/register', [registerController::class, 'store']);
-
-
-//Route::get('/add_items',[itemController::class, 'input']);
-
-// Route::get('/register', [ViewController::class, 'showRegister']);
-// Route::post('/register', [AuthorizationController::class, 'Register']);
-// Route::middleware('auth')->group(function() {

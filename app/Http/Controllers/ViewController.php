@@ -12,8 +12,7 @@ class ViewController extends Controller
 
     public function showHome() {
         return view('home', [
-            'title'=>'home',
-            'name'=>'blank'
+            'title'=>'Home',
         ]);
     }
 
@@ -31,6 +30,14 @@ class ViewController extends Controller
         ]);
     }
 
+    public function showMenu()
+    {
+        return view('menu', [
+            'title' => 'Menu',
+            'active' => 'Menu',
+        ]);
+    }
+
     public function showAddItems() {
         return view('item.addItems', [
             'title'=>'add items',
@@ -44,14 +51,8 @@ class ViewController extends Controller
     }
 
     public function showTransaction() {
-        return view('item.transactionList',[
+        return view('item.transaction',[
             'title'=>'transaction'
-        ]);
-    }
-
-    public function showMenu(){
-        return view('menu',[
-            'title' => 'menu'
         ]);
     }
 }
