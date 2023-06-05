@@ -1,6 +1,7 @@
 @extends('layouts.new_main')
 
 @section('contents')
+<link href='https://fonts.googleapis.com/css?family=DM Mono' rel='stylesheet'>
 <link rel="stylesheet" href="/css/homeStyle.css">
 <div class="container">
     <div class="content1">
@@ -11,11 +12,11 @@
             <p>
                 Make your inventory management easier
             </p>
-            <button class="register" type="button">Register Now</button>
+            <div class="btn-reg">
+                <button class="register" type="button">Register Now</button>
+            </div>
         </div>
-        <div class="right-content1">
-            <img src="">
-        </div>
+        <img src="/img/new-welc.jpg">
     </div>
     <div class="content2">
         <h3>
