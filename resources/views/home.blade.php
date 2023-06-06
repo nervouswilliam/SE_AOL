@@ -24,10 +24,12 @@
         </h3>
         <div class="rectangle-content"></div>
         <p>
-            StocKing is a web application that provides the services to help user and simplify the process of managing perishable goods.
+            StocKing is a web application that provides the services to help user and simplify the process of managing perishable goods
         </p>
     </div>
     <div class="content3">
+        <div class="bg-img">
+        </div>
         <h3>
             What's new?
         </h3>
