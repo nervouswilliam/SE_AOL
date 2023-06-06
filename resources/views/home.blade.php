@@ -13,7 +13,7 @@
                 Make your inventory management easier
             </p>
             <div class="btn-reg">
-                <button class="register" type="button">Register Now</button>
+                <a href="/register"><button class="register" type="button">Register Now</button></a>
             </div>
         </div>
         <img src="/img/new-welc.jpg">
@@ -22,7 +22,7 @@
         <h3>
             About
         </h3>
-        <div class="rectangle-content2"></div>
+        <div class="rectangle-content"></div>
         <p>
             StocKing is a web application that provides the services to help user and simplify the process of managing perishable goods.
         </p>
@@ -31,7 +31,7 @@
         <h3>
             What's new?
         </h3>
-        <div class="rectangle-content3"></div>
+        <div class="rectangle-content"></div>
         <p>
             Celebrating the version 1.0 release, all subscription plan will be 50% off till june 14th
         </p>
