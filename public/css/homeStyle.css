@@ -1,12 +1,12 @@
 /*home*/
-.container{
+.container {
     font-family: 'DM Mono';
     max-width: 100%;
     margin: 0;
     padding: 0;
 }
 
-.content1{
+.content1 {
     position: relative;
     display: flex;
     background-color: #fffffa;
@@ -14,25 +14,25 @@
     height: 40%;
 }
 
-.left-content1{
+.left-content1 {
     padding: 5% 5% 5% 8%;
     width: 50%;
 }
 
-.left-content1 h1{
+.left-content1 h1 {
     overflow-y: hidden;
     font-size: 70px;
 }
 
-.left-content1 p{
+.left-content1 p {
     font-size: 25px;
 }
 
-.btn-reg{
+.btn-reg {
     padding-top: 20%;
 }
 
-.register{
+.register {
     background-color: #0B0909;
     border: 3px solid #000000;
     color: #fffffa;
@@ -43,19 +43,19 @@
     border-radius: 20px;
 }
 
-.register:hover{
+.register:hover {
     background-color: #ffffff;
     border: 3px solid #000000;
     color: #0B0909;
 }
 
-.content1 img{
+.content1 img {
     object-fit: cover;
     width: 72%;
     filter: saturate(80%) contrast(100%) brightness(80%);
 }
 
-.content2{
+.content2 {
     padding-top: 1%;
     margin: 0;
     background-color: #D9D9D9;
@@ -64,20 +64,20 @@
     padding-bottom: 7%;
 }
 
-h3{
+h3 {
     overflow-y: hidden;
     text-align: center;
     padding: 1%;
     font-size: 50px;
 }
 
-p{
+p {
     display: flex;
     position: relative;
     justify-content: center;
 }
 
-.rectangle-content{
+.rectangle-content {
     position: relative;
     background-color: #fffffa;
     padding: .5% 5%;
@@ -85,7 +85,15 @@ p{
     margin: auto;
 }
 
-.content2 p{
+.rectangle-content3 {
+    position: relative;
+    background-color: #fffffa;
+    padding: .5% 5%;
+    width: 22%;
+    margin: auto;
+}
+
+.content2 p {
     font-size: 20px;
     padding-top: 3%;
     padding-left: 20%;
@@ -93,7 +101,7 @@ p{
     text-align: center;
 }
 
-.content3{
+.content3 {
     display: block;
     position: relative;
     margin: 0;
@@ -103,7 +111,7 @@ p{
     overflow-y: hidden;
 }
 
-.bg-img{
+.bg-img {
     display: block;
     position: absolute;
     background-image: url(../img/messy-papers.jpg);
@@ -115,13 +123,13 @@ p{
     padding-bottom: 30%;
 }
 
-.content3 h3{
+.content3 h3 {
     padding-top: 2%;
     position: relative;
     color: #ffffff;
 }
 
-.content3 p{
+.content3 p {
     font-size: 20px;
     padding-top: 3%;
     padding-left: 20%;

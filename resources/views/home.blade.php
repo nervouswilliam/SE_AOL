@@ -33,7 +33,7 @@
         <h3>
             What's new?
         </h3>
-        <div class="rectangle-content"></div>
+        <div class="rectangle-content3"></div>
         <p>
             Celebrating the version 1.0 release, all subscription plan will be 50% off till june 14th
         </p>

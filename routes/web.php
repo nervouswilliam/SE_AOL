@@ -21,6 +21,7 @@ Route::get('/menu', [ViewController::class, 'showMenu']);
 Route::get('/addItems', [ViewController::class, 'showAddItems']);
 Route::get('/transaction', [ViewController::class, 'showTransaction']);
 Route::get('/subscribe', [ViewController::class, 'showSubscribe']);
+Route::get('/post_home', [ViewController::class, 'showPostHome']);
 
 //routing login
 Route::get('/login', [ViewController::class, 'showLogin']);

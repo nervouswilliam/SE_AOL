@@ -55,4 +55,10 @@ class ViewController extends Controller
             'title'=>'transaction'
         ]);
     }
+
+    public function showPostHome() {
+        return view('postHome', [
+            'title'=>'post home',
+        ]);
+    }
 }
