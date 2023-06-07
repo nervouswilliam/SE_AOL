@@ -12,7 +12,15 @@
             Your Enterprise
         </h3>
         <div class="enterprise-list">
-
+            <div class="rst">
+                <a href=""><img src="/img/insertProduct.png"></a>
+            </div>
+            <div class="rst">
+                <a href=""><img src="/img/insertProduct.png"></a>
+            </div>
+            <div class="rst">
+                <a href=""><img src="/img/insertProduct.png"></a>
+            </div>
         </div>
     </div>
     <div class="newsletter">
@@ -31,9 +39,15 @@
             Subscribe to get more benefits!
         </h3>
         <div class="sub-benefit">
-            <div class="benefit1"></div>
-            <div class="benefit2"></div>
-            <div class="benefit3"></div>
+            <div class="benefit">
+                dummy-text
+            </div>
+            <div class="benefit">
+                dummy-text
+            </div>
+            <div class="benefit">
+                dummy-text
+            </div>
         </div>
         <div class="btn-sub">
             <a href="/subscribe"><button class="subs" type="button">Subscribe Now!</button></a>
