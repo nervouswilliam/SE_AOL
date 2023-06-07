@@ -3,7 +3,8 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "poppins", sans-serif;
+    font-family: "DM Mono";
+    background-color: #d9d9d9;
 }
 
 .center {
@@ -20,8 +21,7 @@
     text-align: center;
     padding: 0 0 20px 0;
     /* border-bottom: 1px solid silver; */
-    font-family: "poppins-bold", sans-serif;
-    color: lightskyblue;
+    color: black;
 }
 
 .center form {
@@ -68,14 +68,14 @@ input:focus {
     left: 0;
     width: 0%;
     height: 2px;
-    background: lightskyblue;
+    background: black;
     transition: 0.5s;
 }
 
 .txt input:focus ~ label,
 .txt input:valid ~ label {
     top: -5px;
-    color: lightskyblue;
+    color: black;
 }
 
 .txt input:focus ~ span::before,
@@ -95,18 +95,15 @@ input:focus {
 input[type="submit"] {
     width: 100%;
     height: 50px;
-    background: #a6a6a6;
-    border: 4px solid;
-    border-color: lightskyblue;
-    border-radius: 25px;
+    background: black;
+    border-radius: 20px;
     font-size: 18px;
-    color: #e9f4fb;
+    color: white;
     font-weight: 700;
     cursor: pointer;
-    outline: none;
 }
 
 input[type="submit"]:hover {
-    border-color: #a6a6a6;
-    transition: 0.5s;
+    background-color: #d9d9d9;
+    transition: 0.8s;
 }
