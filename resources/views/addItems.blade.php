@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('contents')
+<link rel="stylesheet" href="/css/formStyle.css">
     <form action="/store", method = "post">
         <div style = "color: black;">
             <h1>add product to inventory </h1>
