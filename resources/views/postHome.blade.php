@@ -12,15 +12,18 @@
             Your Enterprise
         </h3>
         <div class="enterprise-list">
-            <div class="rst">
-                <a href=""><img src="/img/insertProduct.png"></a>
-            </div>
-            <div class="rst">
-                <a href=""><img src="/img/insertProduct.png"></a>
-            </div>
-            <div class="rst">
-                <a href=""><img src="/img/insertProduct.png"></a>
-            </div>
+            <a href=""><div class="rst">
+                <img src="/img/insertProduct.png">
+                <p>Add Enterprise</p>
+            </div></a>
+            <a href=""><div class="rst">
+                <img src="/img/insertProduct.png">
+                <p>Add Enterprise</p>
+            </div></a>
+            <a href=""><div class="rst">
+                <img src="/img/insertProduct.png">
+                <p>Add Enterprise</p>
+            </div></a>
         </div>
     </div>
     <div class="newsletter">
@@ -39,14 +42,25 @@
             Subscribe to get more benefits!
         </h3>
         <div class="sub-benefit">
-            <div class="benefit">
-                dummy-text
+            <div class="out-ben">
+                <div class="benefit">
+                    <img src="/img/AddEnterprise.png">
+                </div>
+                <p>You can add more restaurant</p>
             </div>
-            <div class="benefit">
-                dummy-text
+
+            <div class="out-ben">
+                <div class="benefit">
+                    <img src="/img/moreProducts.png">
+                </div>
+                <p>You can add more products</p>
             </div>
-            <div class="benefit">
-                dummy-text
+
+            <div class="out-ben">
+                <div class="benefit">
+                    <img src="/img/more.png">
+                </div>
+                <p>More added benefits later on</p>
             </div>
         </div>
         <div class="btn-sub">

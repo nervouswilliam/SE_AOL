@@ -61,4 +61,15 @@ class ViewController extends Controller
             'title'=>'post home',
         ]);
     }
+
+    public function showViewInv() {
+        return view('viewInventory', [
+            'title'=>'view inventory',
+        ]);
+    }
+    public function showReportInv() {
+        return view('reportInventory', [
+            'title'=>'report inventory',
+        ]);
+    }
 }

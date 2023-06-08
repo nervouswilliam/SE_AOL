@@ -57,20 +57,26 @@ nav{
     font-weight: 500;
 }
 
+.navbar-menu ul li a:hover{
+    text-decoration: underline;
+}
+
 /* footer */
 .footer{
-    display: block;
+    display: flex;
     background-color: #0B0909;
     width: 100%;
-    padding: 3%;
-    height: 3%;
-    align-items: center;
+    height: 40%;
+    text-align: center;
     justify-content: center;
-    position: absolute;
+    position: relative;
     overflow-y: hidden;
+    padding-top: 1%;
 }
 
 .footer p{
+    padding: 3%;
+    font-size: 30px;
+    font-family: 'DM Mono';
     color: #ffffff;
-    text-align: center;
 }

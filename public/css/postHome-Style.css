@@ -37,14 +37,26 @@ h3{
     flex-wrap: wrap;
     text-align: center;
     justify-content: space-around;
+    padding-bottom: 2.5%;
+}
+
+.enterprise-list a{
+    margin: 0;
+    position: relative;
+    max-width: 30%;
+    max-height: 45%;
+    color: #000000;
+    text-decoration: none;
 }
 
 .rst{
-    margin: 40px;
-    position: relative;
-    max-width: 250px;
-    max-height: 350px;
+    border-style: ridge;
 }
+
+.rst p{
+    font-size: 30px;
+}
+
 .enterprise-list img{
     width: 40%;
     justify-content: center;
@@ -101,6 +113,7 @@ h3{
 .subscribe-list{
     background-color: #44444C;
     height: 50%;
+    padding-bottom: 2%;
 }
 
 .subscribe-list h3{
@@ -116,11 +129,30 @@ h3{
     justify-content: space-around;
 }
 
-.benefit{
-    margin: 40px;
+.out-ben{
     position: relative;
-    max-width: 250px;
-    max-height: 350px;
+    align-items: center;
+    text-align: center;
+}
+
+.out-ben p{
+    color: #fffffa;
+    padding: 5% 0%;
+}
+
+.benefit{
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    max-width: 30%;
+    max-height: 45%;
+    border-style: solid;
+    background-color: #ffffff;
+}
+
+.benefit img{
+    width: 100%;
+    justify-content: center;
 }
 
 .btn-sub{

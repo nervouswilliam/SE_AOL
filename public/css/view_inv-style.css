@@ -1,0 +1,52 @@
+/*view_inventory*/
+.container {
+    font-family: 'DM Mono';
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #D9D9D9;
+}
+
+h2{
+    font-size: 30px;
+    padding: 3% 0%;
+    overflow-y: hidden;
+    text-align: center;
+}
+
+p{
+    text-align: right;
+    padding-right: 1%;
+}
+
+h5{
+    overflow-y: hidden;
+    color: #fffffa;
+}
+
+.table{
+    max-width: 100%;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.row{
+    width: 80%;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.title{
+    padding: 5% 5%;
+    background-color: #0B0909;
+    border-left: 5px solid #fffffa;
+    border-right: 5px solid #fffffa;
+}
+
+.column{
+    background-color: #44444C;
+    padding: 100% 0%;
+    border-left: 5px solid #fffffa;
+    border-right: 5px solid #fffffa;
+}
