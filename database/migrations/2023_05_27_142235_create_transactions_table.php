@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->unsignedBigInteger("user_id");
             $table->unsignedBigInteger("item_Id");
-            $table->integer("Quantity");
+            $table->integer("quantity");
             $table->timestamps();
 
             $table->foreign("user_id")->references('id')->on('users')->onUpdate('Cascade')->onDelete('Cascade');

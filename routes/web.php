@@ -16,14 +16,8 @@ use App\Http\Controllers\registerController;
 |
 */
 
+//routing home
 Route::get('/', [ViewController::class, 'showHome']);
-Route::get('/menu', [ViewController::class, 'showMenu']);
-Route::get('/addItems', [ViewController::class, 'showAddItems']);
-Route::get('/transaction', [ViewController::class, 'showTransaction']);
-Route::get('/subscribe', [ViewController::class, 'showSubscribe']);
-Route::get('/post_home', [ViewController::class, 'showPostHome']);
-Route::get('/view_inventory', [ViewController::class, 'showViewInv']);
-Route::get('/report_inventory', [ViewController::class, 'showReportInv']);
 
 //routing login
 Route::get('/login', [ViewController::class, 'showLogin']);
@@ -32,3 +26,16 @@ Route::post('/login', [AuthorizationController::class, 'Login']);
 //routing register
 Route::get('/register', [ViewController::class, 'showRegister']);
 Route::post('/register', [AuthorizationController::class, 'Register']);
+
+// routing post home
+Route::get('/menu', [ViewController::class, 'showMenu']);
+Route::get('/addrestaurant', [ViewController::class, 'showAddRestaurant']);
+Route::get('/subscribe', [ViewController::class, 'showSubscribe']);
+
+// routing menu
+Route::get('/insertproduct', [ViewController::class, 'showInsertProduct']);
+Route::get('/extractproduct', [ViewController::class, 'showExtractProduct']);
+Route::get('/viewinventory', [ViewController::class, 'showViewInv']);
+Route::get('/reportinventory', [ViewController::class, 'showReportInv']);
+
+
