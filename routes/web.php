@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\AuthorizationController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\registerController;
 
 /*
@@ -34,8 +35,8 @@ Route::get('/subscribe', [ViewController::class, 'showSubscribe']);
 
 // routing menu
 Route::get('/insertproduct', [ViewController::class, 'showInsertProduct']);
+Route::post('/insertproduct', [ProductController::class, 'insertNewProduct']);
+
 Route::get('/extractproduct', [ViewController::class, 'showExtractProduct']);
 Route::get('/viewinventory', [ViewController::class, 'showViewInv']);
 Route::get('/reportinventory', [ViewController::class, 'showReportInv']);
-
-

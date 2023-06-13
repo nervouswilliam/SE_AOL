@@ -59,7 +59,7 @@ class AuthorizationController extends Controller
         // validate user input
         if(Auth::attempt($credentials, $request->remember_me))
         {
-            return redirect('/');
+            return redirect('/posthome');
         }
         else{
             return back()->withErrors([

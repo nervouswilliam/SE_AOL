@@ -2,24 +2,25 @@
 
 @section('contents')
 <link rel="stylesheet" href="/css/formStyle.css">
-    <form action="/store", method = "post">
+    <form action="/insertproduct", method = "post">
+        {{ csrf_field() }}
         <div style = "color: black;">
             <h1>add product to inventory </h1>
             </br>
             <!-- user id -->
-            <label for="labelUserId"> Add User id </label>
+            <label for="labelUserId"> Product Name</label>
             </br>
-            <input type = "int" name = "UserId" style = "color: black;">
+            <input type = "text" name = "name" style = "color: black;">
             </br>
             <!-- item id -->
-            <label for="labelItemId"> Add item id </label>
+            <label for="labelItemId"> Product Type </label>
             </br>
-            <input type = "int" name = "itemId" style = "color: black;">
+            <input type = "text" name = "type" style = "color: black;">
             </br>
             <!-- item expired date -->
             <label for="ItemExpDate"> Add item expired date </label>
             </br>
-            <input type = "date" name = "itemExpiredDate" style = "color: black">
+            <input type = "date" name = "expDate" style = "color: black">
             </br>
             <!-- item id -->
             <label for="LabelQuantity"> Quantity </label>

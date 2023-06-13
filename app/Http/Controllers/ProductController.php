@@ -20,7 +20,7 @@ class ProductController extends Controller
         ]);
 
         // insert into table items
-        $insertItem = array('name' => $request->name, 'created_at' => now());
+        $insertItem = array('name' => $request->name, 'type' => $request->type, 'created_at' => now());
         DB::table('items')->insert($insertItem);
 
         // insert into table inventories
