@@ -2,6 +2,7 @@
 
 @section('contents')
 <link rel="stylesheet" href="/css/login_register.css">
+<div class="background">
     <div class="center">
         <h1>Login page</h1>
         <form action="/login" method="post" enctype="multipart/form-data">
@@ -33,4 +34,5 @@
             </div>
         </form>
     </div>
+</div>
 @endsection
