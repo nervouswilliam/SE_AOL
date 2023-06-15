@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.new_main')
 
 @section('contents')
 <link rel="stylesheet" href="/css/formStyle.css">

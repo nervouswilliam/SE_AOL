@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.new_main')
 
 @section('contents')
 <link rel="stylesheet" href="/css/login_register.css">
@@ -38,7 +38,7 @@
             </select>
             <span class="focus"></span>
             </div>
-            <input type="submit">
+            <input type="submit" style="margin-top: 10%">
     </form>
 </div>
 </div>

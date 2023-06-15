@@ -1,7 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.new_main')
 
 @section('contents')
-<link rel="stylesheet" href="/css/formStyle.css">
+<link rel="stylesheet" href="/css/login_register.css">
 <div class="background">
     <div class="center">
     <h1>Add product to inventory </h1>
@@ -28,7 +28,7 @@
             <span></span>
             <label for="LabelQuantity"> Quantity </label>
             </div>
-            <input type = "submit" name = "insert">
+            <input type = "submit" name = "insert" style="margin-top:10%">
         </div>
     </form>
 </div>

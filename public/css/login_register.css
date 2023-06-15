@@ -8,41 +8,43 @@
 
 .background {
     background-color: #d9d9d9;
+    max-height: max-content;
+    min-height: min-content;
+    justify-content: center;
+    display: flex;
 }
 
 .center {
-    position: relative;
-    padding-top: 70%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-top: 7%;
+    padding-bottom: 5%;
     width: 400px;
     border-radius: 20px;
-    margin-top: 5vh;
 }
 
 .center h1 {
     text-align: center;
-    padding: 0 0 20px 0;
-    /* border-bottom: 1px solid silver; */
+    padding: 0 0 5% 0;
     color: black;
 }
 
 .center form {
-    padding: 0 40px;
-    box-sizing: border-box;
+    padding: 0 10%;
+    /* box-sizing: border-box; */
 }
 
 form .txt {
     position: relative;
-    border-bottom: 2px solid #adadad;
-    margin: 30px 0;
+    border-bottom: 5px solid black;
+    margin: 5% 0;
+    margin-bottom: 2%;
+    height: 20%;
 }
 
 .txt input {
     width: 100%;
+    margin-top: 2%;
     padding: 0 5px;
-    height: 40px;
+    height: 50px;
     font-size: 16px;
     border: none;
     background: none;
@@ -51,10 +53,11 @@ form .txt {
 
 .txt label {
     position: absolute;
-    top: 50%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     left: 5px;
     color: #adadad;
-    transform: translateY(-50%);
+    transform: translateY(-40%);
     font-size: 16px;
     pointer-events: none;
     transition: 0.5s;
@@ -66,19 +69,17 @@ input:focus {
 }
 
 .txt span::before {
-    content: "";
-    position: absolute;
-    top: 40px;
+    top: 45px;
     left: 0;
     width: 0%;
-    height: 2px;
+    height: 4px;
     background: black;
     transition: 0.5s;
 }
 
 .txt input:focus ~ label,
 .txt input:valid ~ label {
-    top: -5px;
+    top: 0.5%;
     color: black;
 }
 
@@ -86,15 +87,6 @@ input:focus {
 .txt input:valid ~ span::before {
     width: 100%;
 }
-
-/* .pw {
-    margin: -5px 0 20px 5px;
-    color: #a6a6a6;
-}
-
-.pw:hover {
-    text-decoration: underline;
-} */
 
 input[type="submit"] {
     width: 100%;

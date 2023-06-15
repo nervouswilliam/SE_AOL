@@ -13,7 +13,7 @@
                 <label>Email</label>
             </div>
             <div class="txt">
-                <input type="password" required name="password">
+                <input type="password" required  name="password">
                 <span></span>
                 <label>Password</label>
             </div>
