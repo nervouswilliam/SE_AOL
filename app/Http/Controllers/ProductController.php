@@ -27,6 +27,7 @@ class ProductController extends Controller
             'type' => $request->type,
             'created_at' => now()
         ];
+
         // insert into table inventories
         $userId = Auth::id();
         $itemId = DB::table('items')->insertGetId($insertItem);
@@ -43,8 +44,21 @@ class ProductController extends Controller
     // extract product
     public function extractProduct(Request $request)
     {
-        
+        $inventories = $request->validate([
+            'quantity' => 'required',
+        ]);
 
+        // $findId = DB::table('inventories')->
+
+        // DB::table('inventories')->where('id', $game)->update(
+
+        // );
+    }
+
+    public function destroy(Item $item)
+    {
+        Item::destroy($item->id);
+        return redirect('/');
     }
 
     //show product
