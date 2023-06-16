@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Inventory;
+use App\Models\Item;
 
 class ProductController extends Controller
 {
@@ -20,9 +22,11 @@ class ProductController extends Controller
         ]);
 
         // insert into table items
-        $insertItem = array('name' => $request->name, 'type' => $request->type, 'created_at' => now());
-        DB::table('items')->insert($insertItem);
-
+        $insertItem = [
+            'name' => $request->name,
+            'type' => $request->type,
+            'created_at' => now()
+        ];
         // insert into table inventories
         $userId = Auth::id();
         $itemId = DB::table('items')->insertGetId($insertItem);
@@ -39,7 +43,15 @@ class ProductController extends Controller
     // extract product
     public function extractProduct(Request $request)
     {
-        // validate user input
+        
 
+    }
+
+    //show product
+    public function viewProduct(Request $request)
+    {
+        $items = Item::all();
+        $inventories = Inventory::all();
+        return view('menu.viewInventory', compact('items', 'inventories'));
     }
 }

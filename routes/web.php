@@ -39,4 +39,5 @@ Route::post('/insertproduct', [ProductController::class, 'insertNewProduct']);
 
 Route::get('/extractproduct', [ViewController::class, 'showExtractProduct']);
 Route::get('/viewinventory', [ViewController::class, 'showViewInv']);
+Route::get('/viewinventory', [ProductController::class, 'viewProduct']);
 Route::get('/reportinventory', [ViewController::class, 'showReportInv']);

@@ -19,6 +19,9 @@
                 </h5>
             </div>
             <div class="column">
+                @foreach($items as $item)
+                    <p>{{ $item-> name }} </p>
+                @endforeach
             </div>
         </div>
         <div class="row">
@@ -28,6 +31,9 @@
                 </h5>
             </div>
             <div class="column">
+                @foreach($inventories as $inventory)
+                    <p>{{ $inventory-> quantity }} </p>
+                @endforeach
             </div>
         </div>
         <div class="row">
@@ -37,6 +43,9 @@
                 </h5>
             </div>
             <div class="column">
+                @foreach($inventories as $inventory)
+                    <p>{{ $inventory -> expire_date }} </p>
+                @endforeach
             </div>
         </div>
         <div class="row">
@@ -46,6 +55,9 @@
                 </h5>
             </div>
             <div class="column">
+                @foreach($items as $item)
+                    <p>{{ $item -> created_at }} </p>
+                @endforeach
             </div>
         </div>
     </div>
