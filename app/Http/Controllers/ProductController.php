@@ -37,6 +37,7 @@ class ProductController extends Controller
             'item_id' => $itemId,
             'expire_date' => $request->expDate,
             'quantity' => $request->quantity,
+            'created_at' => now()
         ]);
 
         return redirect('/menu');
@@ -71,7 +72,9 @@ class ProductController extends Controller
     {
         $itemId = $request -> input('name');
         $items = Item::where('name', $itemId) -> first();
+        // $items = Item::all();
         $quantity = $request -> input('quantity');
+        // dd($items, $quantity);
         $inventory = Inventory::where([
             'user_id' => auth::id(),
             'item_id' => $items -> id

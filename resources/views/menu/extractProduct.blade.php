@@ -5,8 +5,9 @@
 <div class="background">
     <div class="center">
     <h1>Extract Product</h1>
-    <form action = "/extractproduct", method="POST">
+    <form action = "/extractproduct" method="POST">
     {{ csrf_field() }}
+    {{ method_field('DELETE') }}
         <label for="name">Product Name</label>
             <div class="select">
             <select name="name">

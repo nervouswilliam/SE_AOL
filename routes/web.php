@@ -39,7 +39,7 @@ Route::post('/insertproduct', [ProductController::class, 'insertNewProduct']);
 
 Route::get('/extractproduct', [ViewController::class, 'showExtractProduct']);
 Route::get('/extractproduct', [ProductController::class, 'extractProduct']);
-Route::post('/extractproduct', [ProductController::class, 'deleteProduct']);
+Route::delete('/extractproduct', [ProductController::class, 'deleteProduct']);
 Route::get('/viewinventory', [ViewController::class, 'showViewInv']);
 Route::get('/viewinventory', [ProductController::class, 'viewProduct']);
 Route::get('/reportinventory', [ViewController::class, 'showReportInv']);
