@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Item;
+use App\Models\Inventory;
 
 class ViewController extends Controller
 {
@@ -65,6 +67,31 @@ class ViewController extends Controller
         return view('menu.viewInventory', [
             'title'=>'view inventory',
         ]);
+        $items = $request->validate([
+            'name' => 'required',
+            'type' => 'required',
+            'expDate' => 'required',
+            'quantity' => 'required | min: 1'
+        ]);
+
+        // insert into table items
+        $insertItem = [
+            'name' => $request->name,
+            'type' => $request->type,
+            'created_at' => now()
+        ];
+
+        // insert into table inventories
+        $userId = Auth::id();
+        $itemId = DB::table('items')->insertGetId($insertItem);
+        DB::table('inventories')->insert([
+            'user_id' => $userId,
+            'item_id' => $itemId,
+            'expire_date' => $request->expDate,
+            'quantity' => $request->quantity,
+        ]);
+
+        return redirect('/menu');
     }
     public function showReportInv()
     {
@@ -83,5 +110,10 @@ class ViewController extends Controller
         return view('menu.extractProduct', [
             'title' => 'extract product'
         ]);
+        $itemId = $request->input('name');
+        $quantity = $request -> input('quantity');
+        $items = Item::find($itemId);
+        return view('menu.extractProduct', ['items' => $items]);
+        // return redirect('/extractproduct');
     }
 }

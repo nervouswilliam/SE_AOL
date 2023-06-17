@@ -44,22 +44,44 @@ class ProductController extends Controller
     // extract product
     public function extractProduct(Request $request)
     {
-        $inventories = $request->validate([
-            'quantity' => 'required',
-        ]);
-
-        // $findId = DB::table('inventories')->
-
-        // DB::table('inventories')->where('id', $game)->update(
-
-        // );
+        // return view('menu.extractProduct', [
+        //     'title' => 'extract product'
+        // ]);
+        $itemId = $request->input('name');
+        $quantity = $request -> input('quantity');
+        $items = Item::all();
+        // dd($items);
+        return view('menu.extractProduct', compact('items'));
+        // return view('menu.extractProduct', ['items' => $items]);
+        
+        // $inventory = Inventory::where([
+        //     'user_id' => auth::id(),
+        //     'item_id' => $itemId
+        // ])-> first();
+    
+        // if($items && $inventory) 
+        // {
+        //     if($inventory -> quantity >= $quantity)
+        //     {
+        //         if($inventory -> quantity >= $quantity)
+        //         {
+        //             $inventory -> quantity -= $quantity;
+        //             $inventory -> save();
+        //             if($inventory -> quantity == 0)
+        //             {
+        //                 $items -> delete();
+        //             }
+        //             return redirect('/extractproduct') -> with('success', 'Items(s) extracted successfully');
+        //         } else {
+        //             return redirect('/extractproduct') -> with('insufficient amount of items');
+        //         }
+            
+        //     }
+        // $items = Item::all();
+        // // return view('menu.extractProduct', compact('items'));
+        //  } 
     }
 
-    public function destroy(Item $item)
-    {
-        Item::destroy($item->id);
-        return redirect('/');
-    }
 
     //show product
     public function viewProduct(Request $request)
