@@ -81,7 +81,7 @@ class ProductController extends Controller
         {
             if($inventory -> quantity >= $quantity)
             {
-                if($inventory -> quantity >= $quantity)
+                if($inventory && $inventory -> quantity >= $quantity)
                 {
                     try{
                         $inventory -> quantity -= $quantity;
