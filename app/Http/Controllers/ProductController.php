@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Inventory;
 use App\Models\Item;
@@ -51,7 +52,9 @@ class ProductController extends Controller
         $quantity = $request -> input('quantity');
         $items = Item::all();
         // dd($items);
-        return view('menu.extractProduct', compact('items'));
+        return view('menu.extractProduct', compact('items'), [
+            'title' => 'extract product'
+        ]);
         // return view('menu.extractProduct', ['items' => $items]);
         
         // $inventory = Inventory::where([
@@ -59,35 +62,63 @@ class ProductController extends Controller
         //     'item_id' => $itemId
         // ])-> first();
     
-        // if($items && $inventory) 
-        // {
-        //     if($inventory -> quantity >= $quantity)
-        //     {
-        //         if($inventory -> quantity >= $quantity)
-        //         {
-        //             $inventory -> quantity -= $quantity;
-        //             $inventory -> save();
-        //             if($inventory -> quantity == 0)
-        //             {
-        //                 $items -> delete();
-        //             }
-        //             return redirect('/extractproduct') -> with('success', 'Items(s) extracted successfully');
-        //         } else {
-        //             return redirect('/extractproduct') -> with('insufficient amount of items');
-        //         }
-            
-        //     }
-        // $items = Item::all();
-        // // return view('menu.extractProduct', compact('items'));
+        
+        
         //  } 
     }
 
+    public function deleteProduct(Request $request)
+    {
+        $itemId = $request -> input('name');
+        $items = Item::where('name', $itemId) -> first();
+        $quantity = $request -> input('quantity');
+        $inventory = Inventory::where([
+            'user_id' => auth::id(),
+            'item_id' => $items -> id
+        ]) -> first();
+        
+        if($items && $inventory) 
+        {
+            if($inventory -> quantity >= $quantity)
+            {
+                if($inventory -> quantity >= $quantity)
+                {
+                    try{
+                        $inventory -> quantity -= $quantity;
+                        $inventory -> save();
+                    }catch(\Illuminate\Database\QueryException $e){
+                        log::error($e -> getMessage());
+                        return redirect('/extractproduct') -> with('error', 'Database Error occured');
+                    }catch (\PDOException $e) {
+                        // Handle PDO errors
+                        Log::error($e->getMessage());
+                        return redirect('/extractproduct')->with('error', 'PDO error occurred');
+                    }
+                    if($inventory -> quantity == 0)
+                    {
+                        $items -> delete();
+                    }
+                    return redirect('/extractproduct') -> with('success', 'Items(s) extracted successfully');
+                } else {
+                    return redirect('/extractproduct') -> with('insufficient amount of items');
+                }
+            
+            }
+        }
+        $items = Item::all();
+        return view('menu.extractProduct', compact('items'), [
+            'title' => 'extract product'
+        ]);
+
+    }
 
     //show product
     public function viewProduct(Request $request)
     {
         $items = Item::all();
         $inventories = Inventory::all();
-        return view('menu.viewInventory', compact('items', 'inventories'));
+        return view('menu.viewInventory', compact('items', 'inventories'), [
+            'title' => 'view inventory'
+        ]);
     }
 }

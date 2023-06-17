@@ -112,8 +112,9 @@ class ViewController extends Controller
         ]);
         $itemId = $request->input('name');
         $quantity = $request -> input('quantity');
-        $items = Item::find($itemId);
-        return view('menu.extractProduct', ['items' => $items]);
+        $items = Item::all();
+        // dd($items);
+        return view('menu.extractProduct', compact('items'));
         // return redirect('/extractproduct');
     }
 }
