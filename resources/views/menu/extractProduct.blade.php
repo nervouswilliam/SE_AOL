@@ -17,6 +17,7 @@
             </select>
             <span class="focus"></span>
             </div>
+
         <div class="txt">
             <input type="text" id="quantity"name = "quantity" required>
             <span></span>
@@ -27,3 +28,5 @@
     </div>
 </div>
 @endsection
+
+

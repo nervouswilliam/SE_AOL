@@ -75,11 +75,17 @@ class ProductController extends Controller
         // $items = Item::all();
         $quantity = $request -> input('quantity');
         // dd($items, $quantity);
+
         $inventory = Inventory::where([
             'user_id' => auth::id(),
             'item_id' => $items -> id
         ]) -> first();
         
+        $request -> merge([
+            'name' => $items -> name,
+            'quantity' => $inventory -> quantity
+        ]);
+
         if($items && $inventory) 
         {
             if($inventory -> quantity >= $quantity)
