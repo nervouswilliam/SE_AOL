@@ -15,7 +15,10 @@
                 </h5>
             </div>
             <div class="column">
-                <p>dummy-text</p>
+                <!-- <p>dummy-text</p> -->
+                @foreach($items as $item)
+                    <p> {{ $item -> id }} </p>
+                @endforeach
             </div>
         </div>
         <div class="row">
@@ -25,7 +28,10 @@
                 </h5>
             </div>
             <div class="column">
-                <p>dummy-text</p>
+                <!-- <p>dummy-text</p> -->
+                @foreach($items as $item)
+                    <p> {{ $item -> name }} </p>
+                @endforeach
             </div>
         </div>
         <div class="row">
@@ -35,7 +41,10 @@
                 </h5>
             </div>
             <div class="column">
-                <p>dummy-text</p>
+                <!-- <p>dummy-text</p> -->
+                @foreach($inventories as $inventory)
+                    <p> {{ $inventory -> quantity }} </p>
+                @endforeach
             </div>
         </div>
     </div>

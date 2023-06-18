@@ -124,4 +124,13 @@ class ProductController extends Controller
             'title' => 'view inventory'
         ]);
     }
+
+    public function viewProductReport(Request $request)
+    {
+        $items = Item::all();
+        $inventories = Inventory::all();
+        return view('menu.reportInventory', compact('items', 'inventories'), [
+            'title' => 'report Inventory'
+        ]);
+    }
 }

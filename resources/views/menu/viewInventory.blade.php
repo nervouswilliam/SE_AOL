@@ -19,10 +19,10 @@
                 </h5>
             </div>
             <div class="column">
-                <p>dummy-text</p>
-                {{-- @foreach($items as $item)
+                <!-- <p>dummy-text</p> -->
+                @foreach($items as $item)
                     <p>{{ $item-> name }} </p>
-                @endforeach --}}
+                @endforeach
             </div>
         </div>
         <div class="row">
@@ -32,10 +32,10 @@
                 </h5>
             </div>
             <div class="column">
-                <p>dummy-text</p>
-                {{-- @foreach($inventories as $inventory)
+                <!-- <p>dummy-text</p> -->
+                @foreach($inventories as $inventory)
                     <p>{{ $inventory-> quantity }} </p>
-                @endforeach --}}
+                @endforeach
             </div>
         </div>
         <div class="row">
@@ -45,10 +45,10 @@
                 </h5>
             </div>
             <div class="column">
-                <p>dummy-text</p>
-                {{-- @foreach($inventories as $inventory)
+                <!-- <p>dummy-text</p> -->
+                @foreach($inventories as $inventory)
                     <p>{{ $inventory -> expire_date }} </p>
-                @endforeach --}}
+                @endforeach
             </div>
         </div>
         <div class="row">
@@ -58,10 +58,10 @@
                 </h5>
             </div>
             <div class="column">
-                <p>dummy-text</p>
-                {{-- @foreach($items as $item)
+                <!-- <p>dummy-text</p> -->
+                @foreach($items as $item)
                     <p>{{ $item -> created_at }} </p>
-                @endforeach --}}
+                @endforeach
             </div>
         </div>
     </div>
