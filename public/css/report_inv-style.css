@@ -46,9 +46,17 @@ h5{
 
 .column{
     background-color: #44444C;
-    padding: 100% 0%;
+    padding-top: 5%;
+    padding-bottom: 40%;
     border-left: 5px solid #fffffa;
     border-right: 5px solid #fffffa;
+}
+
+.column p{
+    position: relative;
+    padding-top: 1%;
+    text-align: center;
+    color: #fffffa;
 }
 
 .summary{
@@ -59,8 +67,19 @@ h5{
     font-size: 25px;
 }
 
-.summary h5{
+.list-sum{
+    display: flex;
+}
+
+.list-sum h5{
     color: #0B0909;
     padding-top: 1%;
     padding-left: 5%;
+}
+
+.list-sum p{
+    text-align: center;
+    color: #0B0909;
+    padding-top: 1%;
+    padding-left: 2%;
 }

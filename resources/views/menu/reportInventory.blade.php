@@ -15,6 +15,7 @@
                 </h5>
             </div>
             <div class="column">
+                <p>dummy-text</p>
             </div>
         </div>
         <div class="row">
@@ -24,6 +25,7 @@
                 </h5>
             </div>
             <div class="column">
+                <p>dummy-text</p>
             </div>
         </div>
         <div class="row">
@@ -33,6 +35,7 @@
                 </h5>
             </div>
             <div class="column">
+                <p>dummy-text</p>
             </div>
         </div>
     </div>
@@ -41,18 +44,38 @@
         <h2>
             Monthly Summary
         </h2>
-        <h5>
-            Most Restocked:
-        </h5>
-        <h5>
-            Most Expired:
-        </h5>
-        <h5>
-            Least Restocked:
-        </h5>
-        <h5>
-            Least Expired:
-        </h5>
+        <div class="list-sum">
+            <h5>
+                Most Restocked:
+            </h5>
+            <p>
+                dummy-text
+            </p>
+        </div>
+        <div class="list-sum">
+            <h5>
+                Most Expired:
+            </h5>
+            <p>
+                dummy-text
+            </p>
+        </div>
+        <div class="list-sum">
+            <h5>
+                Least Restocked:
+            </h5>
+            <p>
+                dummy-text
+            </p>
+        </div>
+        <div class="list-sum">
+            <h5>
+                Least Expired:
+            </h5>
+            <p>
+                dummy-text
+            </p>
+        </div>
     </div>
 </div>
 @endsection
