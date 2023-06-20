@@ -23,6 +23,7 @@ Route::get('/', [ViewController::class, 'showHome']);
 //routing login
 Route::get('/login', [ViewController::class, 'showLogin']);
 Route::post('/login', [AuthorizationController::class, 'Login']);
+Route::post('/logout', [AuthorizationController::class, 'logout']);
 
 //routing register
 Route::get('/register', [ViewController::class, 'showRegister']);
@@ -50,7 +51,7 @@ Route::put('/menu/{id}', [ProductController::class, 'delete']);
 Route::get('/reportinventory', [ViewController::class, 'showReportInv']);
 Route::get('/reportinventory', [ProductController::class, 'viewProductReport']);
 
-Route::group(['middleware' => ['auth']], function(){
-    Route::get('/logout', [LogoutController::class, 'perform']);
-});
+// Route::group(['middleware' => ['auth']], function(){
+//     Route::get('/logout', [LogoutController::class, 'perform']);
+// });
 
