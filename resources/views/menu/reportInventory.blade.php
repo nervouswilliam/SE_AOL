@@ -58,7 +58,7 @@
                 Most Restocked:
             </h5>
             <p>
-                dummy-text
+                {{ $data -> name }}
             </p>
         </div>
         <div class="list-sum">
@@ -66,7 +66,7 @@
                 Most Expired:
             </h5>
             <p>
-                dummy-text
+                {{ $exp -> name }}
             </p>
         </div>
         <div class="list-sum">
@@ -74,7 +74,7 @@
                 Least Restocked:
             </h5>
             <p>
-                dummy-text
+                {{ $leastData -> name }}
             </p>
         </div>
         <div class="list-sum">
@@ -82,7 +82,7 @@
                 Least Expired:
             </h5>
             <p>
-                dummy-text
+                {{ $leastExp -> name }}
             </p>
         </div>
     </div>
