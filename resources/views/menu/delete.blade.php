@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/css/login_register.css">
 <div class="background">
     <div class="center">
-    <h1>Edit Inventory </h1>
+    <h1>Delete Inventory </h1>
     <form action="/menu/{{ $data -> id }}", method = "post">
         {{ csrf_field() }}
         @method('put')

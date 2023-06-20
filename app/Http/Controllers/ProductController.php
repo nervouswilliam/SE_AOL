@@ -198,13 +198,8 @@ class ProductController extends Controller
 
         // insert into table inventories
 
-        DB::table('inventories')->where('item_id', $id) ->delete([
-            'user_id' => $userId,
-            'expire_date' => $request->expDate,
-            'quantity' => $request->quantity,
-            'updated_at' => now()
-        ]);
-
+        DB::table('inventories')->where('item_id', $id) ->delete();
+        DB::table('items') -> where('id', $id) -> delete();
         return redirect('/menu');
 
     }
