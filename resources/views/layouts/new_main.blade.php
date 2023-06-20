@@ -20,7 +20,7 @@
                 @auth
                     @if (Auth::user()->role == 'unsubscribed' || 'subscribed')
                         <div>
-                            <b>{{ auth()->user()->name }}</b>
+                            <h4><b>{{ auth()->user()->name }}</b></h4>
                             <form action="/logout" method="POST">
                                 {{ csrf_field() }}
                                 <button class="btn btn-danger">Logout</button>

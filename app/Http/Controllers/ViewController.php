@@ -67,29 +67,29 @@ class ViewController extends Controller
         return view('menu.viewInventory', [
             'title'=>'view inventory',
         ]);
-        $items = $request->validate([
-            'name' => 'required',
-            'type' => 'required',
-            'expDate' => 'required',
-            'quantity' => 'required | min: 1'
-        ]);
+        // $items = $request->validate([
+        //     'name' => 'required',
+        //     'type' => 'required',
+        //     'expDate' => 'required',
+        //     'quantity' => 'required | min: 1'
+        // ]);
 
-        // insert into table items
-        $insertItem = [
-            'name' => $request->name,
-            'type' => $request->type,
-            'created_at' => now()
-        ];
+        // // insert into table items
+        // $insertItem = [
+        //     'name' => $request->name,
+        //     'type' => $request->type,
+        //     'created_at' => now()
+        // ];
 
-        // insert into table inventories
-        $userId = Auth::id();
-        $itemId = DB::table('items')->insertGetId($insertItem);
-        DB::table('inventories')->insert([
-            'user_id' => $userId,
-            'item_id' => $itemId,
-            'expire_date' => $request->expDate,
-            'quantity' => $request->quantity,
-        ]);
+        // // insert into table inventories
+        // $userId = Auth::id();
+        // $itemId = DB::table('items')->insertGetId($insertItem);
+        // DB::table('inventories')->insert([
+        //     'user_id' => $userId,
+        //     'item_id' => $itemId,
+        //     'expire_date' => $request->expDate,
+        //     'quantity' => $request->quantity,
+        // ]);
 
         return redirect('/menu');
     }
@@ -107,14 +107,14 @@ class ViewController extends Controller
     }
     public function showExtractProduct()
     {
-        return view('menu.extractProduct', [
+        return view('menu.extractProduct', compact('items'), [
             'title' => 'extract product'
         ]);
-        $itemId = $request->input('name');
-        $quantity = $request -> input('quantity');
-        $items = Item::all();
+        // $itemId = $request->input('name');
+        // $quantity = $request -> input('quantity');
+        // $items = Item::all();
         // dd($items);
-        return view('menu.extractProduct', compact('items'));
+        // return view('menu.extractProduct', compact('items'));
         // return redirect('/extractproduct');
     }
 }

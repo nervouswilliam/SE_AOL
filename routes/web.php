@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\AuthorizationController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\registerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,8 +49,3 @@ Route::put('/menu/{id}', [ProductController::class, 'delete']);
 // Route::get('/viewinventory', [ProductController::class, 'sort']);
 Route::get('/reportinventory', [ViewController::class, 'showReportInv']);
 Route::get('/reportinventory', [ProductController::class, 'viewProductReport']);
-
-// Route::group(['middleware' => ['auth']], function(){
-//     Route::get('/logout', [LogoutController::class, 'perform']);
-// });
-
