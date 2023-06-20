@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Collection;
 use App\Models\Inventory;
 use App\Models\Item;
 
@@ -40,32 +41,20 @@ class ProductController extends Controller
             'created_at' => now()
         ]);
 
+        
+
         return redirect('/menu');
     }
 
     // extract product
     public function extractProduct(Request $request)
     {
-        // return view('menu.extractProduct', [
-        //     'title' => 'extract product'
-        // ]);
         $itemId = $request->input('name');
         $quantity = $request -> input('quantity');
         $items = Item::all();
-        // dd($items);
         return view('menu.extractProduct', compact('items'), [
             'title' => 'extract product'
         ]);
-        // return view('menu.extractProduct', ['items' => $items]);
-        
-        // $inventory = Inventory::where([
-        //     'user_id' => auth::id(),
-        //     'item_id' => $itemId
-        // ])-> first();
-    
-        
-        
-        //  } 
     }
 
     public function deleteProduct(Request $request)
@@ -126,7 +115,20 @@ class ProductController extends Controller
     {
         $items = Item::all();
         $inventories = Inventory::all();
-        return view('menu.viewInventory', compact('items', 'inventories'), [
+        $sortBy = Inventory::latest() -> get(); 
+        $sortASC = Inventory::orderBy('created_at', 'ASC') -> get();
+        return view('menu.viewInventory', compact('items', 'inventories', 'sortBy', 'sortASC'), [
+            'title' => 'view inventory'
+        ]);
+    }
+
+    public function sort(Request $request)
+    {
+        $sortBy = $request->query('sort_by', 'created_at'); 
+        $sortOrder = $request->query('sort_order', 'desc');
+
+        $products = Item::orderBy($sortBy, $sortOrder) -> get();
+        return view('menu.viewInventory', compact('items', 'inventories','sortBy', 'sortOrder'), [
             'title' => 'view inventory'
         ]);
     }
@@ -135,8 +137,43 @@ class ProductController extends Controller
     {
         $items = Item::all();
         $inventories = Inventory::all();
-        return view('menu.reportInventory', compact('items', 'inventories'), [
+        $data = Item::all() -> first();
+        $exp = Item::all() -> last();
+        $leastData = Item::all() -> skip(1) ->first();
+        $leastExp = Item::all() -> skip(2) -> first();
+        return view('menu.reportInventory', compact('items', 'inventories', 'data', 'exp', 'leastData', 'leastExp'), [
             'title' => 'report Inventory'
         ]);
+    }
+
+    public function viewEdit($id)
+    {
+        $data = Item::find($id);
+        
+        return view('menu.edit', compact(['data']), [
+            'title' => 'edit'
+        ]);
+    }
+    public function update($id, Request $request)
+    {
+        $data = Item::find($id);
+        $data -> name = $request -> name;
+        $data -> type = $request -> type;
+        $data -> updated_at = now();
+        $data -> save();
+
+        $userId = Auth::id();
+
+        // insert into table inventories
+       
+        DB::table('inventories')->where('item_id', $id) ->update([
+            'user_id' => $userId,
+            'expire_date' => $request->expDate,
+            'quantity' => $request->quantity,
+            'updated_at' => now()
+        ]);
+
+        return redirect('/menu');
+        
     }
 }
