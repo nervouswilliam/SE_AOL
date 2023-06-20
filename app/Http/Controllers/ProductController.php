@@ -41,7 +41,7 @@ class ProductController extends Controller
             'created_at' => now()
         ]);
 
-        
+
 
         return redirect('/menu');
     }
@@ -69,13 +69,13 @@ class ProductController extends Controller
             'user_id' => auth::id(),
             'item_id' => $items -> id
         ]) -> first();
-        
+
         $request -> merge([
             'name' => $items -> name,
             'quantity' => $inventory -> quantity
         ]);
 
-        if($items && $inventory) 
+        if($items && $inventory)
         {
             if($inventory -> quantity >= $quantity)
             {
@@ -100,7 +100,7 @@ class ProductController extends Controller
                 } else {
                     return redirect('/extractproduct') -> with('insufficient amount of items');
                 }
-            
+
             }
         }
         $items = Item::all();
@@ -115,7 +115,7 @@ class ProductController extends Controller
     {
         $items = Item::all();
         $inventories = Inventory::all();
-        $sortBy = Inventory::latest() -> get(); 
+        $sortBy = Inventory::latest() -> get();
         $sortASC = Inventory::orderBy('created_at', 'ASC') -> get();
         return view('menu.viewInventory', compact('items', 'inventories', 'sortBy', 'sortASC'), [
             'title' => 'view inventory'
@@ -124,7 +124,7 @@ class ProductController extends Controller
 
     public function sort(Request $request)
     {
-        $sortBy = $request->query('sort_by', 'created_at'); 
+        $sortBy = $request->query('sort_by', 'created_at');
         $sortOrder = $request->query('sort_order', 'desc');
 
         $products = Item::orderBy($sortBy, $sortOrder) -> get();
@@ -149,7 +149,7 @@ class ProductController extends Controller
     public function viewEdit($id)
     {
         $data = Item::find($id);
-        
+
         return view('menu.edit', compact(['data']), [
             'title' => 'edit'
         ]);
@@ -165,7 +165,7 @@ class ProductController extends Controller
         $userId = Auth::id();
 
         // insert into table inventories
-       
+
         DB::table('inventories')->where('item_id', $id) ->update([
             'user_id' => $userId,
             'expire_date' => $request->expDate,
@@ -174,6 +174,38 @@ class ProductController extends Controller
         ]);
 
         return redirect('/menu');
-        
+
+    }
+
+    public function viewDelete($id)
+    {
+        $data = Item::find($id);
+
+        return view('menu.delete', compact(['data']), [
+            'title' => 'delete'
+        ]);
+    }
+
+    public function delete($id, Request $request)
+    {
+        $data = Item::find($id);
+        $data -> name = $request -> name;
+        $data -> type = $request -> type;
+        $data -> updated_at = now();
+        $data -> save();
+
+        $userId = Auth::id();
+
+        // insert into table inventories
+
+        DB::table('inventories')->where('item_id', $id) ->delete([
+            'user_id' => $userId,
+            'expire_date' => $request->expDate,
+            'quantity' => $request->quantity,
+            'updated_at' => now()
+        ]);
+
+        return redirect('/menu');
+
     }
 }

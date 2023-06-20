@@ -12,7 +12,7 @@
             sort by:
             <select name="sort_by" id="sort_by">
                 <option value="created_at" {{ $sortBy }}>Newest</option>
-                <option value="created_at" {{ $sortASC }}>Oldest</option>    
+                <option value="created_at" {{ $sortASC }}>Oldest</option>
             </select>
             <button id = "sort-button" type = "submit"> Sort </button>
         </p>
@@ -25,7 +25,7 @@
                 </h5>
             </div>
             <div class="column">
-                
+
                 @foreach($items as $item)
                     <p>{{ $item-> name }} </p>
                 @endforeach
@@ -38,7 +38,7 @@
                 </h5>
             </div>
             <div class="column">
-                
+
                 @foreach($inventories as $inventory)
                     <p>{{ $inventory-> quantity }} </p>
                 @endforeach
@@ -51,7 +51,7 @@
                 </h5>
             </div>
             <div class="column">
-            
+
                 @foreach($inventories as $inventory)
                     <p>{{ $inventory -> expire_date }} </p>
                 @endforeach
@@ -64,7 +64,7 @@
                 </h5>
             </div>
             <div class="column">
-        
+
                 @foreach($items as $item)
                     <p>{{ $item -> created_at }} </p>
                 @endforeach
@@ -76,12 +76,25 @@
                     Update
                 </h5>
             </div>
-        </div>
         <div class="column">
-        
+
                 @foreach($items as $item)
                     <p> <a href = "/menu/{{ $item -> id }}/edit"> Update </a> </p>
                 @endforeach
+        </div>
+        </div>
+        <div class = "row">
+            <div class = "title">
+                <h5>
+                    Delete
+                </h5>
+            </div>
+        <div class="column">
+
+                @foreach($items as $item)
+                    <p> <a href = "/menu/{{ $item -> id }}/delete"> Delete </a> </p>
+                @endforeach
+        </div>
         </div>
     </div>
 </div>

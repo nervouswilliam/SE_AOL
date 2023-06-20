@@ -44,6 +44,8 @@ Route::get('/viewinventory', [ViewController::class, 'showViewInv']);
 Route::get('/viewinventory', [ProductController::class, 'viewProduct']);
 Route::get('/menu/{id}/edit', [ProductController::class, 'viewEdit']);
 Route::put('/menu/{id}', [ProductController::class, 'update']);
+Route::get('/menu/{id}/delete', [ProductController::class, 'viewDelete']);
+Route::put('/menu/{id}', [ProductController::class, 'delete']);
 // Route::get('/viewinventory', [ProductController::class, 'sort']);
 Route::get('/reportinventory', [ViewController::class, 'showReportInv']);
 Route::get('/reportinventory', [ProductController::class, 'viewProductReport']);

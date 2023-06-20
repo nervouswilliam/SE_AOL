@@ -13,8 +13,8 @@
         </h3>
         <div class="enterprise-list">
             <a href="/menu"><div class="rst">
-                <img src="/img/insertProduct.png">
-                <p>Add Enterprise</p>
+                <img class="elist-1" src="/img/pizzaAfton.jpg">
+                <p>Afton Enterprise</p>
             </div></a>
             <a href="/addrestaurant"><div class="rst">
                 <img src="/img/insertProduct.png">
