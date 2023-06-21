@@ -57,7 +57,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="row">
+        {{-- <div class="row">
             <div class="title">
                 <h5>
                     Date of Insert
@@ -69,7 +69,7 @@
                     <p>{{ $item -> created_at }} </p>
                 @endforeach
             </div>
-        </div>
+        </div> --}}
         <div class = "row">
             <div class = "title">
                 <h5>

@@ -135,8 +135,8 @@ class ProductController extends Controller
 
     public function viewProductReport(Request $request)
     {
-        $items = Item::all();
-        $inventories = Inventory::all();
+        $items = Item::all()->take(5);
+        $inventories = Inventory::all()->take(5);
         $data = Item::all() -> first();
         $exp = Item::all() -> last();
         $leastData = Item::all() -> skip(1) ->first();
