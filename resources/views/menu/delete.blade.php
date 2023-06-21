@@ -15,19 +15,9 @@
             <label for="labelUserId"> Product Name</label>
             </div>
             <div class="txt">
-            <input type = "text" name = "type" style = "color: black;" required>
+            <input type = "text" name = "type" value = "{{ $data -> type }}" style = "color: black;" required>
             <span></span>
             <label for="labelItemId"> Product Type </label>
-            </div>
-            <div class="txt">
-            <input type = "date" name = "expDate" style = "color: black">
-            <span></span>
-            <label for="ItemExpDate"> Add item expired date </label>
-            </div>
-            <div class="txt">
-            <input type = "int" name = "quantity" style = "color: black;" required>
-            <span></span>
-            <label for="LabelQuantity"> Quantity </label>
             </div>
             <input type = "submit" name = "insert" style="margin-top:10%">
         </div>
