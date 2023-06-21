@@ -16,17 +16,17 @@
             <label for="labelUserId"> Product Name</label>
             </div>
             <div class="txt">
-            <input type = "text" name = "type" style = "color: black;" required>
+            <input type = "text" name = "type" value = "{{ $data -> type }}"style = "color: black;" required>
             <span></span>
             <label for="labelItemId"> Product Type </label>
             </div>
-            <div class="txt">
-            <input type = "date" name = "expDate" style = "color: black">
+            <!-- <div class="txt">
+            <input type = "date" name = "expDate"  value = '{{ $data -> expDate }}'style = "color: black">
             <span></span>
             <label for="ItemExpDate"> Add item expired date </label>
-            </div>
+            </div> -->
             <div class="txt">
-            <input type = "int" name = "quantity" style = "color: black;" required>
+            <input type = "int" name = "quantity"  style = "color: black;" required>
             <span></span>
             <label for="LabelQuantity"> Quantity </label>
             </div>
