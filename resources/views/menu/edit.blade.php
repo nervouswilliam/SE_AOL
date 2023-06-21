@@ -2,6 +2,7 @@
 
 @section('contents')
 <link rel="stylesheet" href="/css/login_register.css">
+<link rel="stylesheet" href="/css/new_main.css">
 <div class="background">
     <div class="center">
     <h1>Edit Inventory </h1>
